@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	template="/WEB-INF/templates/maintemplate.xhtml">
+
+	<ui:define name="content">
+
+		<h:form id="formEdit" style="text-align: center; margin-top:8%">
+		<p:growl id="messages" life="3000" />
+			<p:graphicImage value="../resources/images/mirror.png" height="200px" />
+			<br/>
+			<p:outputLabel value="@" />
+			<p:inputText size="55" value="#{sessionController.searchUser}"  />
+			<p:commandButton value="Mirror" action="#{menuController.navigatepostListToUser}" />
+		</h:form>
+
+	</ui:define>
+</ui:composition>

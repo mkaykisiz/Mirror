@@ -1,0 +1,57 @@
+@CHARSET "UTF-8";
+
+.labelTitle {
+    font-weight: bold;
+}
+
+.ui-commentDetail{
+	background-color: #F6F7E2;
+}
+
+.ui-editor, .ui-editor > iframe, .ui-editor > textarea {
+    width: 99.5% ! important;
+}
+
+.ui-widget,.ui-widget .ui-widget {
+	font-size: 10px;
+}
+
+.ui-layout-north {
+	z-index: 20 !important;
+	overflow: visible !important;;
+}
+
+.ui-layout-north .ui-layout-unit-content {
+	overflow: visible !important;
+}
+
+.ui-layout-resizer-west {
+	width: 2px;
+}
+
+.ui-icon-comments {
+	background-image: url(../images/comments.png) !important;
+	background-size: round auto;
+	background-repeat: repeat; 
+	
+	height: 24px;
+	width: 24px;
+}
+
+.ui-icon-16-comments_add {
+	background-image: url(../images/comments_add.png) !important;
+	background-size: 16px 16px;
+	height: 16px;
+	width: 16px;
+}
+
+.ui-icon-comments_delete {
+	background-image: url(../images/comments_delete.png) !important;
+}
+
+.ui-icon-16-comments_alert {
+	background-image: url(../images/comments_alert.png) !important;
+	background-size: 16px 16px;
+	height: 16px;
+	width: 16px;
+}

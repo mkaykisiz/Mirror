@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	template="/WEB-INF/templates/maintemplate.xhtml">
+
+	<ui:define name="content">
+		<p:layout>
+			<p:layoutUnit position="west" resizable="false" size="50%">
+				<h:form id="formEdit">
+					<p:dataTable id="dtMirrors" var="mirror" style="margin-top:25px"
+						value="#{postListController.postListToUser}"
+						emptyMessage="Hiç bir kayıta rastalanmadı yada Böyle bir kullanıcı Twitter'da mevcut değil !">
+						<p:column headerText="Mirrors">
+							<p:outputLabel value="#{mirror.content}" lang="180"
+								escape="false">
+							</p:outputLabel>
+							<br />
+							<p:outputPanel styleClass="margin-right:10px">
+								<p:outputLabel value="#{mirror.createdDate}"
+									style="margin-left:80% !important" />
+							</p:outputPanel>
+						</p:column>
+
+					</p:dataTable>
+				</h:form>
+			</p:layoutUnit>
+			<p:layoutUnit position="center">
+			<center>
+				<a class="twitter-timeline" href="https://twitter.com/grsla" 
+					data-widget-id="293648524820758528" >
+					Tweetler</a>
+					</center>
+				<script>
+					!function(d, s, id) {
+						var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/
+								.test(d.location) ? 'http' : 'https';
+						if (!d.getElementById(id)) {
+							js = d.createElement(s);
+							js.id = id;
+							js.src = p + "://platform.twitter.com/widgets.js";
+							fjs.parentNode.insertBefore(js, fjs);
+						}
+					}(document, "script", "twitter-wjs");
+				</script>
+			</p:layoutUnit>
+		</p:layout>
+
+
+	</ui:define>
+</ui:composition>

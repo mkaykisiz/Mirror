@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta http-equiv="content-language" content="tr" />
+
+	<style type="text/css">
+a {
+	color: #00CCCC !important;
+	-moz-transition: color 0.5s;
+	-webkit-transition: color 0.5s;
+	-o-transition: color 0.5s;
+	transition: color 0.5s;
+	text-decoration: none;
+}
+
+body {
+	background-color: #00CCCC !important;
+}
+</style>
+</h:head>
+
+<h:body>
+	<h:form>
+		<p:growl id="messages" life="3000" />
+
+		<p:menubar>
+			<p:menuitem>
+				<p:graphicImage value="/resources/images/logo.png" height="25" />
+			</p:menuitem>
+			<p:menuitem value="Son Gönderiler"
+				action="#{menuController.navigateLastPosts}" icon="ui-icon-refresh" />
+			<p:menuitem value="Birilerini Ara"
+				action="#{menuController.navigateSearchUser}" icon="ui-icon-search" />
+
+			<f:facet name="options">
+				<p:commandButton style="margin-right:10px"
+					oncomplete="PF('newMirror').show()" icon="ui-icon-plusthick"
+					title="Add Mirror" />
+
+				<p:dialog header="Yeni Mirror" widgetVar="newMirror" modal="true"
+					showEffect="fade" hideEffect="fade" resizable="false" width="406px">
+
+
+					<p:inputTextarea value="#{NewPostController.newPostString}"
+						rows="5" cols="50" counter="display" maxlength="180" lang="400px" />
+					<br />
+					<h:outputText id="display" style="margin-left:300px" />
+					<p:commandButton id="NewPostButton" value="Ekle"
+						actionListener="#{NewPostController.AddNewPost}"
+						oncomplete="PF('newMirror').hide()" ajax="false"
+						styleClass="ui-priority-primary" update="messages" />
+
+
+				</p:dialog>
+			</f:facet>
+		</p:menubar>
+	</h:form>
+</h:body>
+</html>

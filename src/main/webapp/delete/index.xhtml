@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	template="/WEB-INF/templates/maintemplate.xhtml">
+
+	<ui:define name="content">
+		<center>
+			<h:form>
+				<p:growl id="messages" life="3000" />
+				<p:outputLabel value="Silenecek kişi :" />
+				<p:inputText value="#{deleteController.userName}" />
+				<p:commandButton value="Sil"
+					actionListener="#{deleteController.deleteUser}" ajax="false" />
+			</h:form>
+		</center>
+	</ui:define>
+</ui:composition>

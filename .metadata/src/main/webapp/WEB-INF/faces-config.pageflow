@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf14097425816920" configfile="/Mirror/src/main/webapp/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="Main Rule" x="122" y="370" id="pf14099276616070" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf14099276616081 pf140992805257211 pf140992805257212 pf14100275707800" path="*"/>
+  <nodes xsi:type="pageflow:PFPage" name="index.xhtml" x="338" y="178" id="pf14099276616083" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf14099276616081" path="/index.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="UserMirror/index.xhtml" id="pf140992805257313" referenceLink="//@navigationRule.0/@navigationCase.1/@toViewId|" inlinks="pf140992805257211" path="/UserMirror/index.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="Search/index.xhtml" id="pf140992805257314" referenceLink="//@navigationRule.0/@navigationCase.3/@toViewId|" inlinks="pf140992805257212" path="/Search/index.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="LastPost/index.xhtml" id="pf14100275707811" referenceLink="//@navigationRule.0/@navigationCase.3/@toViewId|" inlinks="pf14100275707800" path="/LastPost/index.xhtml"/>
+  <links id="pf14099276616081" target="pf14099276616083" source="pf14099276616070" outcome="index" redirect="true"/>
+  <links id="pf140992805257211" target="pf140992805257313" source="pf14099276616070" outcome="userMirrors" redirect="true"/>
+  <links id="pf140992805257212" target="pf140992805257314" source="pf14099276616070" outcome="searchUser" redirect="true"/>
+  <links id="pf14100275707800" target="pf14100275707811" source="pf14099276616070" outcome="lastPost" redirect="true"/>
+</pageflow:Pageflow>
